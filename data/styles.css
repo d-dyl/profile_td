@@ -1,0 +1,257 @@
+@font-face {
+	font-family: JR;
+	src: url(josefin/JosefinSans-Regular.ttf);
+}
+@font-face {
+	font-family: JSB;
+	src: url(josefin/JosefinSans-SemiBold.ttf);
+}
+@font-face {
+	font-family: JB;
+	src: url(josefin/JosefinSans-Bold.ttf);
+}
+@font-face {
+	font-family: JL;
+	src: url(josefin/JosefinSans-Light.ttf);
+}
+:root {
+	--mcol: 0;
+}
+body {
+	margin: 0;
+	padding: 0;
+	overflow: visible;
+	background-color: white;
+	user-select: none;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.inactive {
+	text-decoration: line-through
+}
+/* top bar */
+#menu {
+	position: fixed;
+	width:100%;
+	height:100px;
+	font-family: JSB;
+	background-color: rgb(calc(255 - var(--mcol)),calc(255 - var(--mcol)),calc(255 - var(--mcol)),0.5);
+	z-index: 10;
+	backdrop-filter: blur(5px);
+	user-select: none;
+}
+#menu table {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+#menu td {
+	opacity: 0;
+	padding: 15px;
+	font-size: 20px;
+}
+a{
+	position: relative;
+	text-decoration: none;
+	color: rgb(var(--mcol),var(--mcol),var(--mcol));
+}
+a:before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	bottom: -2px;
+	background-color: rgb(var(--mcol),var(--mcol),var(--mcol));
+	opacity: 0;
+	visibility: hidden;
+	transform: scaleX(0);
+	transition: all 0.25s;
+	transition-timing-function: cubic-bezier(0.25, 0.5, 0, 1)
+}
+a:hover:before {
+	opacity: 1;
+	visibility: visible;
+	transform: scaleX(1);
+}
+h2 {
+	font-family: JR;
+	font-size: 40px;
+}
+p {
+	margin: 5px;
+	font-family: JL;
+	font-size: 30px;
+}
+/* intro page */
+
+#intro {
+	display: table;
+	position: absolute;
+	width: 100%;
+	height: 1000px;
+	vertical-align: middle;
+	font-family: JL;
+	user-select: none;
+}
+#intro .ani_vid {
+	position: absolute;
+	left: -100px;
+}
+#intro .ani_vid video{
+	transform: scale(.9)
+}
+#intro .box {
+	display: cell;
+	position: absolute;
+	text-align: right;
+	right: 100px;
+	top: 250px;
+	opacity: 1;
+}
+#intro .box p {
+	font-size: 150px;
+	opacity: 0;
+	margin: 0;
+	margin-top: 50px;
+}
+.anchor {
+	position: absolute;
+}
+/* invert */
+#inv {
+	position: absolute;
+	text-align: center;
+	top: 1100px;
+	height: 1500px;
+	width: 100%;
+	color: #FFF;
+	background-color: #000
+}
+#inv h1 {
+	font-family: JL;
+	font-size: 80px;
+	margin-bottom: 0;
+}
+/* inventor */
+#cad_3d{
+	position: absolute;
+	opacity: 0;
+	height: 900px;
+	width: 100%;
+}
+#cad_3d_11{
+	position: absolute;
+	top: 1000px;
+	height: 300px;
+	width: 100%;
+	opacity: 0;
+}
+
+/* autocad dual porpoise */
+#arch {
+	opacity: 0;
+	position: absolute;
+	text-align: center;
+	top: 2600px; /* 1100 */
+	width: 100%;
+	height: 850px;
+}
+#arch h1 {
+	font-family: JL;
+	font-size: 80px;
+	margin-bottom: 0;
+}
+/* autocad hosue */
+#arch_cad2 {
+	position: absolute;
+	text-align: center;
+	top: 3450px;
+	width: 100%;
+	height: 600px;
+	opacity: 0;
+}
+/* sketchup hosue */
+#arch_ske {
+	position: absolute;
+	text-align: center;
+	top: 4050px;
+	width: 100%;
+	height: 1000px;
+	opacity: 0;
+}
+/*  */
+#contact {
+	position: absolute;
+	top: 5050px;
+	width: 100%;
+	height:400px;
+	background-color: black;
+	text-align: center;
+	
+}
+
+#contact .box{
+	display: inline-block;
+	margin: 50px;
+}
+
+#contact .box td{
+	text-align: center;
+	vertical-align: top;
+	padding: 20px;
+	height: 60px;
+	width: 250px;
+}
+#contact h1 {
+	color: gray;
+	font-family: JR;
+	font-size: 16px;
+}
+#contact p {
+	margin:1px;
+	color: white;
+	font-family: JR;
+	font-size: 20px;
+}
+
+#contact a {
+	color: #FFF;
+}
+#contact a:before {
+	background-color: #FFF;
+	bottom: 2px;
+}
+
+#scroll {
+	position: fixed;
+	right: 0;
+	top: 0;
+	width: 30px;
+	height: 100%;
+	z-index: 100;
+	opacity: 0;
+}
+
+#dot {
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	right: 15px;
+	top: calc(50% - 5px);
+	border-radius: 8px;
+	background-color: rgb(150,150,150);
+	opacity: 0.5
+}
+.arrowhead {
+	position: absolute; 
+	top: 500px; 
+	right: 12px; 
+	opacity: 0.5;
+}
+#top_a {
+	transform: scale(0.6) rotate(-135deg);
+}
+#bot_a {
+	transform: scale(0.6) rotate(45deg);
+}
