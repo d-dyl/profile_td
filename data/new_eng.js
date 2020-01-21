@@ -1,5 +1,6 @@
 // New JQuery Code U0.2
 $( document ).ready(function() {
+	alert('test')
 	function c(dark) {
 
 		setTimeout(function () {
